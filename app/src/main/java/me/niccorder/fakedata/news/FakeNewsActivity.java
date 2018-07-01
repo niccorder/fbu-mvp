@@ -1,4 +1,4 @@
-package me.niccorder.fakedata;
+package me.niccorder.fakedata.news;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
+import me.niccorder.fakedata.FakeNewsApplication;
+import me.niccorder.fakedata.R;
 import me.niccorder.fakedata.data.NewsRepository;
 
 public class FakeNewsActivity extends AppCompatActivity {
