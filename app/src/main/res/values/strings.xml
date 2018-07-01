@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Fake Data</string>
+    <string name="app_name">Facebook News</string>
+    <string name="article_icon_description">Article Image</string>
 </resources>

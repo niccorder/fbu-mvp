@@ -48,11 +48,11 @@ public class NewsAdapter extends RecyclerView.Adapter<ArticleHolder> {
     }
 
     private void loadAricleImage(Article article, ImageView icon) {
-        final int primaryColor = ContextCompat.getColor(icon.getContext(), R.color.colorPrimary);
-        final int accentColor = ContextCompat.getColor(icon.getContext(), R.color.colorAccent);
+        final int primaryColor = ContextCompat.getColor(icon.getContext(), R.color.color_primary);
+        final int accentColor = ContextCompat.getColor(icon.getContext(), R.color.color_accent);
         final int primaryDarkColor = ContextCompat.getColor(
                 icon.getContext(),
-                R.color.colorPrimaryDark
+                R.color.color_primary_dark
         );
 
         final CircularProgressDrawable placeholderProgress = new CircularProgressDrawable(icon.getContext());

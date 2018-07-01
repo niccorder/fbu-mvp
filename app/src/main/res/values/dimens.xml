@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="item_article_h">200dp</dimen>
+
+    <!-- Application default/common dimensions -->
+    <dimen name="margin_normal">8dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
+
+    <!-- Article item dimensions -->
     <dimen name="item_article_margin_v">6dp</dimen>
     <dimen name="item_article_margin_h">4dp</dimen>
+    <dimen name="item_article_card_radius">@dimen/card_corner_radius</dimen>
+    <dimen name="item_article_card_elevation">4dp</dimen>
+    <dimen name="item_article_image_size">100dp</dimen>
+    <dimen name="item_article_description_top_margin">2dp</dimen>
+
 </resources>

@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "me.niccorder.fakedata"
+        applicationId "me.niccorder.news"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1

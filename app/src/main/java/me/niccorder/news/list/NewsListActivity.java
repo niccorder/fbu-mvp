@@ -40,7 +40,6 @@ public class NewsListActivity extends AppCompatActivity {
     private SwipeRefreshLayout refreshLayout;
 
     private RecyclerView newsRecycler;
-    private LinearLayoutManager layoutManager;
     private NewsAdapter newsAdapter;
 
     @Override
@@ -67,18 +66,16 @@ public class NewsListActivity extends AppCompatActivity {
     private void initRefreshLayout () {
         // Sets the color wheel colors shown during a PTR (pull to refresh).
         refreshLayout.setColorSchemeResources(
-                R.color.colorPrimary,
-                R.color.colorAccent,
-                R.color.colorPrimaryDark
+                R.color.color_primary,
+                R.color.color_accent,
+                R.color.color_primary_dark
         );
     }
 
     private void initRecycler() {
-        // Init the layout manager & attach to recycler.
-        layoutManager = new LinearLayoutManager(this);
-        newsRecycler.setLayoutManager(layoutManager);
-
-        // Set an item animator to make adding/removing/moving items in our adapter pretty.
+        // Init the layout manager, and add default animation for adding/removing/moving items in
+        // our recyclerview so that way they look pretty.
+        newsRecycler.setLayoutManager(new LinearLayoutManager(this));
         newsRecycler.setItemAnimator(new DefaultItemAnimator());
 
         // Add's spacing to our items inside our recycler.
