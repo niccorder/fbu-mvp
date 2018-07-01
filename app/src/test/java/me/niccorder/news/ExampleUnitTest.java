@@ -1,4 +1,4 @@
-package me.niccorder.fakedata;
+package me.niccorder.news;
 
 import org.junit.Test;
 

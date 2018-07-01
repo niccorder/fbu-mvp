@@ -1,9 +1,9 @@
-package me.niccorder.fakedata;
+package me.niccorder.news;
 
 import android.app.Application;
 
-import me.niccorder.fakedata.data.DummyNewsRepository;
-import me.niccorder.fakedata.data.NewsRepository;
+import me.niccorder.news.data.DummyNewsRepository;
+import me.niccorder.news.data.NewsRepository;
 
 /**
  * The entry point of our application. Ensures that we only have one mocked news repository for our
@@ -11,7 +11,7 @@ import me.niccorder.fakedata.data.NewsRepository;
  *
  * Please look into the Singleton pattern if you are not familiar.
  */
-public class FakeNewsApplication extends Application {
+public class NewsApplication extends Application {
 
     /**
      * The dummy data news repository.

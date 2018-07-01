@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.data;
+package me.niccorder.news.data;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,9 +8,9 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 
-import me.niccorder.fakedata.model.Article;
-import me.niccorder.fakedata.model.Category;
-import me.niccorder.fakedata.model.Company;
+import me.niccorder.news.model.Article;
+import me.niccorder.news.model.Category;
+import me.niccorder.news.model.Company;
 
 /**
  * The implementation of the {@link NewsRepository} which provides dummy data that allows us to mock

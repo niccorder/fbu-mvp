@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.news.adapter;
+package me.niccorder.news.list.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import me.niccorder.fakedata.R;
+import me.niccorder.news.R;
 
 /**
  * A view holder for a news article to be displayed in our article adapter.

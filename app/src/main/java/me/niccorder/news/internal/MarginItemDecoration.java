@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.internal;
+package me.niccorder.news.internal;
 
 import android.content.Context;
 import android.content.res.Resources;

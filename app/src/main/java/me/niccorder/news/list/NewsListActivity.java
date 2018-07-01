@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.news;
+package me.niccorder.news.list;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,17 +10,17 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.niccorder.fakedata.FakeNewsApplication;
-import me.niccorder.fakedata.R;
-import me.niccorder.fakedata.data.NewsRepository;
-import me.niccorder.fakedata.internal.MarginItemDecoration;
-import me.niccorder.fakedata.model.Article;
-import me.niccorder.fakedata.news.adapter.ArticleAdapter;
+import me.niccorder.news.NewsApplication;
+import me.niccorder.news.R;
+import me.niccorder.news.data.NewsRepository;
+import me.niccorder.news.internal.MarginItemDecoration;
+import me.niccorder.news.model.Article;
+import me.niccorder.news.list.adapter.NewsAdapter;
 
 /**
  * For my initial MVP, this will only display a list of articles using a RecyclerView.
  */
-public class FakeNewsActivity extends AppCompatActivity {
+public class NewsListActivity extends AppCompatActivity {
 
     /**
      * The in-memory datastore of articles. We hold on to a reference here so we can determine if
@@ -41,15 +41,15 @@ public class FakeNewsActivity extends AppCompatActivity {
 
     private RecyclerView newsRecycler;
     private LinearLayoutManager layoutManager;
-    private ArticleAdapter articleAdapter;
+    private NewsAdapter newsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fake_news);
+        setContentView(R.layout.activity_news);
 
         // Grab a reference to our news repository
-        newsRepository = ((FakeNewsApplication) getApplication()).getNewsRepository();
+        newsRepository = ((NewsApplication) getApplication()).getNewsRepository();
 
         // Grab a reference to our views.
         refreshLayout = findViewById(R.id.refresh_container);
@@ -61,7 +61,7 @@ public class FakeNewsActivity extends AppCompatActivity {
         // Grab all articles from our news repository and notify the adapter that we have data
         // to be displayed.
         articles.addAll(newsRepository.getArticles());
-        articleAdapter.notifyDataSetChanged();
+        newsAdapter.notifyDataSetChanged();
     }
 
     private void initRefreshLayout () {
@@ -91,7 +91,7 @@ public class FakeNewsActivity extends AppCompatActivity {
         newsRecycler.addItemDecoration(marginDecoration);
 
         // Create the article adapter, and attach it to our recycler.
-        articleAdapter = new ArticleAdapter(articles);
-        newsRecycler.setAdapter(articleAdapter);
+        newsAdapter = new NewsAdapter(articles);
+        newsRecycler.setAdapter(newsAdapter);
     }
 }

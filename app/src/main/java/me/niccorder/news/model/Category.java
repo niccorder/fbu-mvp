@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.model;
+package me.niccorder.news.model;
 
 /**
  * Represents a different type of category for a news article.

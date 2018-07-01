@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.news.adapter;
+package me.niccorder.news.list.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -12,17 +12,17 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
-import me.niccorder.fakedata.R;
-import me.niccorder.fakedata.model.Article;
+import me.niccorder.news.R;
+import me.niccorder.news.model.Article;
 
 /**
  * An implementation of the {@link RecyclerView.Adapter} which displays news articles.
  */
-public class ArticleAdapter extends RecyclerView.Adapter<ArticleHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<ArticleHolder> {
 
     private final List<Article> articles;
 
-    public ArticleAdapter(List<Article> articles) {
+    public NewsAdapter(List<Article> articles) {
         this.articles = articles;
     }
 

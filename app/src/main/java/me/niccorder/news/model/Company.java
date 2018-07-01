@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.model;
+package me.niccorder.news.model;
 
 /**
  * Data model which represents a company whom writes, or creates articles.

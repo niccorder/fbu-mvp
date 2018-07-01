@@ -1,11 +1,11 @@
-package me.niccorder.fakedata.data;
+package me.niccorder.news.data;
 
 import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import me.niccorder.fakedata.model.Article;
-import me.niccorder.fakedata.model.Category;
+import me.niccorder.news.model.Article;
+import me.niccorder.news.model.Category;
 
 /**
  * API for providing data, in this case data about the news.

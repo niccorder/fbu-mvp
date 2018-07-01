@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.niccorder.fakedata">
+    package="me.niccorder.news">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".FakeNewsApplication"
+        android:name=".NewsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".news.FakeNewsActivity">
+        <activity android:name=".list.NewsListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

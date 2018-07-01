@@ -1,4 +1,4 @@
-package me.niccorder.fakedata;
+package me.niccorder.news;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

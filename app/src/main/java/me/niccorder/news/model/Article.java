@@ -1,4 +1,4 @@
-package me.niccorder.fakedata.model;
+package me.niccorder.news.model;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
