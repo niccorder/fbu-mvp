@@ -17,6 +17,9 @@ import me.niccorder.fakedata.internal.MarginItemDecoration;
 import me.niccorder.fakedata.model.Article;
 import me.niccorder.fakedata.news.adapter.ArticleAdapter;
 
+/**
+ * For my initial MVP, this will only display a list of articles using a RecyclerView.
+ */
 public class FakeNewsActivity extends AppCompatActivity {
 
     /**
@@ -26,7 +29,8 @@ public class FakeNewsActivity extends AppCompatActivity {
     private final List<Article> articles = new ArrayList<>();
 
     /**
-     * The news repository provides news articles.
+     * The news repository provides news articles. Notice how we set the type to the NewsRepository
+     * interface, and not the actual implementation (in this case it's the DummyDataRepository).
      */
     private NewsRepository newsRepository;
 
@@ -47,20 +51,29 @@ public class FakeNewsActivity extends AppCompatActivity {
         // Grab a reference to our news repository
         newsRepository = ((FakeNewsApplication) getApplication()).getNewsRepository();
 
-        // Populate with articles.
-        articles.addAll(newsRepository.getArticles());
-
         // Grab a reference to our views.
         refreshLayout = findViewById(R.id.refresh_container);
         newsRecycler = findViewById(R.id.recycler);
 
+        initRefreshLayout();
+        initRecycler();
+
+        // Grab all articles from our news repository and notify the adapter that we have data
+        // to be displayed.
+        articles.addAll(newsRepository.getArticles());
+        articleAdapter.notifyDataSetChanged();
+    }
+
+    private void initRefreshLayout () {
         // Sets the color wheel colors shown during a PTR (pull to refresh).
         refreshLayout.setColorSchemeResources(
                 R.color.colorPrimary,
                 R.color.colorAccent,
                 R.color.colorPrimaryDark
         );
+    }
 
+    private void initRecycler() {
         // Init the layout manager & attach to recycler.
         layoutManager = new LinearLayoutManager(this);
         newsRecycler.setLayoutManager(layoutManager);
@@ -68,6 +81,7 @@ public class FakeNewsActivity extends AppCompatActivity {
         // Set an item animator to make adding/removing/moving items in our adapter pretty.
         newsRecycler.setItemAnimator(new DefaultItemAnimator());
 
+        // Add's spacing to our items inside our recycler.
         final MarginItemDecoration marginDecoration = new MarginItemDecoration(
                 this,
                 R.dimen.item_article_margin_v,
@@ -76,7 +90,7 @@ public class FakeNewsActivity extends AppCompatActivity {
         );
         newsRecycler.addItemDecoration(marginDecoration);
 
-        // Create the article adapter.
+        // Create the article adapter, and attach it to our recycler.
         articleAdapter = new ArticleAdapter(articles);
         newsRecycler.setAdapter(articleAdapter);
     }
