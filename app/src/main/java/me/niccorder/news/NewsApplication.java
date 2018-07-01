@@ -14,7 +14,9 @@ import me.niccorder.news.data.NewsRepository;
 public class NewsApplication extends Application {
 
     /**
-     * The dummy data news repository.
+     * The news repository we will be using throughout the application.
+     *
+     * There should only ever be one instance per-application.
      */
     private NewsRepository newsRepository;
 
