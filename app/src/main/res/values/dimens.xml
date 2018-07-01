@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_article_h">200dp</dimen>
+    <dimen name="item_article_margin_v">6dp</dimen>
+    <dimen name="item_article_margin_h">4dp</dimen>
+</resources>
