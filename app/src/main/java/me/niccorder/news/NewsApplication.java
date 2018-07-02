@@ -1,6 +1,12 @@
 package me.niccorder.news;
 
 import android.app.Application;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import me.niccorder.news.data.DummyNewsRepository;
 import me.niccorder.news.data.NewsRepository;
@@ -14,11 +20,24 @@ import me.niccorder.news.data.NewsRepository;
 public class NewsApplication extends Application {
 
     /**
+     * The single handler used inside the entire application. This allows us to not create objects
+     * in an unnecessary fashion.
+     */
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
+
+    /**
+     * @return the main handler instance for the application.
+     */
+    public Handler getMainHandler() {
+        return mainHandler;
+    }
+
+    /**
      * The news repository we will be using throughout the application.
      *
      * There should only ever be one instance per-application.
      */
-    private NewsRepository newsRepository;
+    private final NewsRepository newsRepository = new DummyNewsRepository(getMainHandler());
 
     /**
      * @return the news repository to use in the application.
@@ -36,11 +55,5 @@ public class NewsApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        // Mock out our news repository.
-        // the reason why we go through all this effort is that when we decide to implement
-        // the news repository to provide real data from an API we will, in theory, only have
-        // to swap out this one line of code instead of changing code all over the application.
-        newsRepository = new DummyNewsRepository();
     }
 }
