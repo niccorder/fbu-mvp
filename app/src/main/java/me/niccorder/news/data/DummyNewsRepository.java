@@ -1,5 +1,6 @@
 package me.niccorder.news.data;
 
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -112,6 +113,16 @@ public class DummyNewsRepository implements NewsRepository {
             )
     };
 
+    /**
+     * A handler is a utility class used to communicate between a background thread and the main
+     * thread, or to run a task after a delay.
+     */
+    private final Handler handler;
+
+    public DummyNewsRepository(Handler handler) {
+        this.handler = handler;
+    }
+
     @NonNull
     @Override
     public List<Category> getAllCategories() {
@@ -119,14 +130,24 @@ public class DummyNewsRepository implements NewsRepository {
                 BUSINESS,
                 TECHNOLOGY,
                 POLITICS,
-                SPORTS
+                SPORTS,
+                WORLD
         );
     }
 
-    @NonNull
     @Override
-    public List<Article> getArticles() {
-        return Arrays.asList(articles);
+    public void getArticles(@NonNull final RepositoryCallback<List<Article>> callback) {
+        // This will run the code inside the run() method after a specified delay.
+        // in our case, we want to delay the task for 200L to mimic a network call.
+        handler.postDelayed(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        callback.onSuccess(Arrays.asList(articles));
+                    }
+                },
+                200L
+        );
     }
 
     @NonNull
