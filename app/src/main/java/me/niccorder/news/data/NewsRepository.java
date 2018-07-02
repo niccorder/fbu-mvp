@@ -30,9 +30,11 @@ public interface NewsRepository {
     @NonNull List<Category> getAllCategories();
 
     /**
-     * @return all currently available articles;
+     * Asynchronously retrieves all news articles.
+     *
+     * @param callback to be called on a terminal event.
      */
-    @NonNull List<Article> getArticles();
+    void getArticles(@NonNull RepositoryCallback<List<Article>> callback);
 
     /**
      * @param category to search by.
