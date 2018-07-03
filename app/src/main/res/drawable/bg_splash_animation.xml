@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="@integer/splash_animation_length">
+        <shape>
+            <gradient
+                android:angle="0"
+                android:endColor="@color/color_primary_dark"
+                android:startColor="@color/color_primary" />
+        </shape>
+    </item>
+    <item android:duration="@integer/splash_animation_length">
+        <shape>
+            <gradient
+                android:angle="180"
+                android:endColor="@color/color_primary_dark"
+                android:startColor="@color/color_primary" />
+        </shape>
+    </item>
+    <item android:duration="@integer/splash_animation_length">
+        <shape>
+            <gradient
+                android:angle="360"
+                android:endColor="@color/color_primary_dark"
+                android:startColor="@color/color_primary" />
+        </shape>
+    </item>
+</animation-list>
