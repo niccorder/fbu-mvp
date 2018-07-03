@@ -13,5 +13,6 @@
     <dimen name="item_article_card_elevation">4dp</dimen>
     <dimen name="item_article_image_size">100dp</dimen>
     <dimen name="item_article_description_top_margin">2dp</dimen>
+    <dimen name="splash_image_size">100dp</dimen>
 
 </resources>
